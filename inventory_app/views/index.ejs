@@ -1,0 +1,121 @@
+
+<% for(let row of rows) { %>
+  <tr>
+      <td><%= i + 1 %></td>
+      <td><%= row.name %></td>
+      <td><%= row.description %></td>
+      <td><%= row.total %></td>
+      <td><%= row.location%></td>
+      <td>
+          <a href="/edit" class="btn border-shadow update">
+              <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+          </a>
+          <a class="btn border-shadow delete" data-id=<%= users[i]._id%> >
+              <span class="text-gradient"><i class="fas fa-times"></i></span>
+          </a>
+      </td>
+  </tr>
+  <% } %>
+
+
+<!-- <html>
+  <head>
+    <style>
+  table{
+    border-spacing: 0px;
+    width: 100%;
+}
+
+.table td, .table th{
+    padding: .75em;
+    vertical-align: top;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.table td > a.btn{
+    padding: .3em 1em;
+    font-size: 1.1em;
+    margin: 0 .2em;
+}
+
+.table tr:hover{
+    background-color:#025c68 ;
+}
+
+.table tr:hover td > a{
+    box-shadow: none;
+}
+
+
+.text-gradient{
+   color: white;
+   background-color: rgb(226, 217, 132);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+</style>
+  </head>
+  <body>
+    <h2>Inventory Tracker</h2>
+   
+   
+    <table class='table'>
+      <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Location</th>
+      </tr>
+      <% for(let row of rows) { %>
+      <tr>
+        <td><%= row.name %></td>
+        <td><%= row.description %></td>
+        <td><%=row.total %></td>
+        <td>
+          <%=row.location %><button class="button button3">Delete</button>
+          <button class= 'button button2'>
+          <a href="/edit" class="btn border-shadow update">
+            <span class="text-gradient">
+              <i class="fa fa-pencil">Edit</i>
+            </span>
+          </a>
+          </button>
+        </td>
+        
+      </tr>
+    </thead>
+    <% } %>
+  </table>
+
+    <style>
+      .button {
+        
+        border:none;
+        color: rgb(54, 20, 20);
+       
+        text-align: center;
+       
+
+        font-size: 16px;
+
+        cursor: pointer;
+      }
+      .button1 {
+        background-color: #4caf50;
+      }
+      .button2 {
+        background-color: rgb(184, 170, 44);
+         
+      }
+      .button3 {
+      
+        background-color: #d11f1f;
+      }
+    </style>
+
+   
+  </body>
+</html> -->
