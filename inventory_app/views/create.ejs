@@ -34,18 +34,22 @@ div {
 </style>
 <body>
 
-<h3>Edit Item</h3>
+<h3>List New Item</h3>
 
 <div>
-  <form action="/edit/<%= item.id%>" method='POST'>
+  <form action="/create" method='POST'>
     <label for="fname">Item Name</label>
-    <input  value="<%=item.name%>" type="text" id="fname" name="name" placeholder="Item name..">
+    <input type="text" id="fname" name="name" placeholder="Item name..">
 
     <label for="lname">Item Description</label>
-    <input value="<%=item.description%>" type="text" id="lname" name="description" placeholder="Description..">
+    <input  type="text" id="lname" name="description" placeholder="Description..">
 
     <label for="lname">Total # of Items</label>
-    <input  value="<%=item.total%>" type="text" id="lname" name="total" placeholder="Total..">
+    <input type="text" id="lname" name="total" placeholder="Total..">
+
+
+    <label for="lname">Warehouse ID</label>
+    <input type="text" id="lname" name="warehouse_id" placeholder="ID">
 
 
     <label for="country">Location</label>

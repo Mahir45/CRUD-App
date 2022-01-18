@@ -1,7 +1,24 @@
+DROP TABLE IF EXISTS inventory CASCADE;
+DROP TABLE IF EXISTS warehouse CASCADE;
+
+
+CREATE TABLE warehouse (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  city VARCHAR(255) NOT NULL
+  
+);
 CREATE TABLE inventory (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
   description VARCHAR(255) NOT NULL,
   total INTEGER NOT NULL DEFAULT 5,
-  location VARCHAR(255) NOT NULL
+  location VARCHAR(255) NOT NULL,
+   warehouse_id INTEGER REFERENCES warehouse(id) ON DELETE CASCADE
 );
+
+
+
+  
+   
+

@@ -9,6 +9,10 @@ const {Pool} = require ('pg')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const editRouter = require('./routes/edit')
+const createRouter = require('./routes/create')
+const newRouter = require('./routes/new')
+const warehouseRouter = require('./routes/warehouse')
+
 
 const db = new Pool({
   user: 'mahirahmed',
@@ -39,6 +43,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter(db));
 app.use('/users', usersRouter);
 app.use('/edit', editRouter(db))
+app.use('/create', createRouter(db))
+app.use('/new', newRouter(db))
+app.use('/warehouse',warehouseRouter(db) )
 
 
 // catch 404 and forward to error handler

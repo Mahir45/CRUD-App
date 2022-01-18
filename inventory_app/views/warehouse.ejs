@@ -124,6 +124,8 @@ table{
 }
 
   </style>
+
+  </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -140,12 +142,7 @@ table{
                 <div class="container">
                     <div class="text-center">
                         <a href="/" class="nav-brand text-dark">Inventory</a>
-                         <div class="box-nav d-flex justify-between">
-                
-                <a href="/warehouse" >
-                  <span class="text-gradient"> Warehouses </span>
-              </a>
-            </div>
+                    </div>
                 </div>
             </nav>
         </header>
@@ -154,29 +151,26 @@ table{
     <!-- Main Site -->
     <main id="site-main">
         <div class="container">
-            <div class="box-nav d-flex justify-between">
-                <a href="/create" class="border-shadow">
-                    <span class="text-gradient">New item <i class="fas fa-plus"></i></span>
-                </a>
-                
-            </div>
+            
 
             <!-- form handling -->
             <form action="/" method="POST">
                 <table class="table">
                     <thead class="thead-dark">
                       <div  class="text-center">
+                        <div class="box-nav d-flex justify-between">
+                        
+                          <a href="/new" class="border-shadow">
+                            <span class="text-gradient">New Warehouse <i class="fas fa-plus"></i></span>
+                        </a>
+                      </div>
 
                         <tr>
-                          <th>Product ID</th>
+                          <th>Warehouse ID</th>
                           <th>Name</th>
-                          <th>Description</th>
-                          <th>Total</th>
-                          <th>Location</th>
-                          <th>
-
-                            
-                          </tr>
+                          <th>City</th>
+                        
+                    
                         </div>
                       </thead>
                       <tbody>
@@ -187,25 +181,12 @@ table{
                             
                               <td><%= row.id %></td>
                               <td><%= row.name %></td>
-                              <td><%= row.description %></td>
-                              <td><%= row.total %></td>
-                              <td><%= row.location %></td>
+                              <td><%= row.city %></td>
+                            
                   
                               
 
-                                <td>
-                                    
-                                  <a href="/edit?id=<%= row.id %>" class="btn border-shadow update">
-                                    <span class="text-gradient"><i class="fas fa-pen-square"></i></span>
-                                  </a>
-                              
-
-                                    <a class="btn border-shadow delete"  ="users[i]._id%">
-                                      
-                                      <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                    
-                                    </a>
-                                  </td>
+                                
                                   
                                   
                                 </tr>
