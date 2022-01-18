@@ -1,6 +1,4 @@
-
-   
-CRUD-Nodejs-PostgreSQL
+##  Inventory Tracker CRUD-Nodejs-PostgreSQL
 This repository contains a simple Application explaining CRUD operations using PostgreSQL as database and Nodejs on the backend.
 
 Environment Setup
@@ -34,8 +32,9 @@ CREATE TABLE inventory (
    warehouse_id INTEGER REFERENCES warehouse(id) ON DELETE CASCADE
 );
 
+
 Connecting to Database
-Once you've created the database, change the following credentials at connectionStrings as per your database.
+Once you've created the database, change the following credentials at connectionStrings as per your database. If you like you can also jsut run the schema file and also run the seeds file within the db folder to automatically add the tables and the data.
 
 const { Client } = require('pg');
 var connectionString = "postgres://[username]:[password]@localhost:5432/[database name]";
