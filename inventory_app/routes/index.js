@@ -1,4 +1,6 @@
 const express = require("express");
+const { Querystring } = require("request/lib/querystring");
+const app = require("../app");
 const router = express.Router();
 
 /* GET home page. */
@@ -32,5 +34,25 @@ FROM
       });
   });
 
+router.post("/delete/:id", (req,res) => {
+  const queryString = `DELETE FROM inventory WHERE inventory.id= $1 RETURNING *;`
+  
+  const id = req.params.id
+db.query(queryString, [id])
+.then(() => {
+
+  res.redirect('/')
+})
+.catch((err) => {
+  console.log(err + 'error')
+})
+})
+
+
+
+
+
+
   return router;
 };
+

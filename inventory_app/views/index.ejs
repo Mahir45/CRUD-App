@@ -62,14 +62,14 @@ a {
 }
 
 .text-gradient{
-    background: linear-gradient(to right, hsl(0, 0%, 0%), #2d2c31);
+    background: linear-gradient(to right, hsl(0, 1%, 21%), #2e274b);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 #header nav{
-    background-color: #f86d55;
+    background-color: #8846c5;
     padding: 1em 0;
     width: 100%;
 }
@@ -109,7 +109,7 @@ table{
 }
 
 .table tr:hover{
-    background-color:#85b6e4 ;
+    background-color:#aadfec ;
 }
 
 .table tr:hover td > a{
@@ -162,7 +162,7 @@ table{
             </div>
 
             <!-- form handling -->
-            <form action="/" method="POST">
+            <!-- <form action="/" method="POST"> -->
                 <table class="table">
                     <thead class="thead-dark">
                       <div  class="text-center">
@@ -193,18 +193,26 @@ table{
                   
                               
 
-                                <td>
+                                <td style= 'display:flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;'
+                            }>
                                     
                                   <a href="/edit?id=<%= row.id %>" class="btn border-shadow update">
                                     <span class="text-gradient"><i class="fas fa-pen-square"></i></span>
                                   </a>
-                              
-
-                                    <a class="btn border-shadow delete"  ="users[i]._id%">
-                                      
-                                      <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                  <!-- <form action="/delete?id=<%= row.id %>" method='POST'> -->
+                                    <form action="/delete/<%= row.id %>" method='POST'>
                                     
-                                    </a>
+                                  
+                                                <button class="btn border-shadow delete">
+                                                  
+                                                  <i class="fas fa-times"></i>
+                                                  
+                                                  
+                                                </button>
+                                              </form>
                                   </td>
                                   
                                   
@@ -212,7 +220,7 @@ table{
                               <% } %>
                     </tbody>
                 </table>
-            </form>
+            <!-- </form> -->
         </div>
     </main>
   </body>

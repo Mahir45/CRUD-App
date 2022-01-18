@@ -23,8 +23,8 @@ module.exports = (db) => {
     
     const { name, description, total, location } = req.body;
     const id = req.params.id
-    const queryString = `UPDATE inventory SET name = $1, description = $2, total = $3, location = $4, warehouse_id = $5, WHERE id = $6;`
-    const values = [name, description, total, location, warehouse_id,id];
+    const queryString = `UPDATE inventory SET name = $1, description = $2, total = $3, location = $4 WHERE id = $5;`
+    const values = [name, description, total, location, id];
     db.query(queryString, values)
       .then(() => {
         res.redirect('/')

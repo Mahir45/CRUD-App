@@ -45,7 +45,7 @@ app.use('/users', usersRouter);
 app.use('/edit', editRouter(db))
 app.use('/create', createRouter(db))
 app.use('/new', newRouter(db))
-app.use('/warehouse',warehouseRouter(db) )
+app.use('/warehouse',warehouseRouter(db))
 
 
 // catch 404 and forward to error handler
