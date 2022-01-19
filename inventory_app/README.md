@@ -23,21 +23,31 @@ Connecting to recently created Database: \c testdb
 
 Create Table:
 
-CREATE TABLE inventory (
-  id SERIAL PRIMARY KEY NOT NULL,
-  name VARCHAR(255) NOT NULL,
-  description VARCHAR(255) NOT NULL,
-  total INTEGER NOT NULL DEFAULT 5,
-  location VARCHAR(255) NOT NULL,
-   warehouse_id INTEGER REFERENCES warehouse(id) ON DELETE CASCADE
-);
+run this command from the root folder once you have sucessfully created the database
+
+* \i inventory_app/db/migrations/01_schema.sql 
+
+
+### This creates the tables
+
+* \i inventory_app/db/seeds/seeds.sql 
+
+
+### Inserts the seeds into the tables
+
 
 
 Connecting to Database
-Once you've created the database, change the following credentials at connectionStrings as per your database. If you like you can also jsut run the schema file and also run the seeds file within the db folder to automatically add the tables and the data.
+Once you've created the database, change the following credentials in the  as per your database. 
 
-const { Client } = require('pg');
-var connectionString = "postgres://[username]:[password]@localhost:5432/[database name]";
+const { pool } = require('pg');
+const db = new Pool({
+  user:
+  host: 
+  database: 
+  port: 
+});
+db.connect()
 
 
 Running the Application
